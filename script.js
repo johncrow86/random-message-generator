@@ -2,15 +2,15 @@
 const generateDailyOutlookMsg = () => {
     let randomNumber = Math.floor(Math.random() * 5);
     switch (randomNumber) {
-        case 0: return "Today will be an exceptional day!\n";
+        case 0: return "Today will be an exceptional day!";
         break;
-        case 1: return "Today will be the worst day of the week..\n";
+        case 1: return "Today will be the worst day of the week..";
         break;
-        case 2: return "Today will be a rather normal day.\n";
+        case 2: return "Today will be a rather normal day.";
         break;
-        case 3: return "Today will be pretty good.\n";
+        case 3: return "Today will be pretty good.";
         break;
-        case 4: return "Today will be not great.\n";
+        case 4: return "Today will be not great.";
         break;
         default: return "ERROR";
         break;
@@ -21,15 +21,15 @@ const generateDailyOutlookMsg = () => {
 const generateBreakfastMsg = () => {
     let randomNumber = Math.floor(Math.random() * 5);
     switch (randomNumber) {
-        case 0: return "Lets start the day with some eggs.\n";
+        case 0: return "Lets start the day with some eggs.";
         break;
-        case 1: return "Lets maybe have pancakes this morning.\n";
+        case 1: return "Lets maybe have pancakes this morning.";
         break;
-        case 2: return "Some yogurt and granola to start off.\n";
+        case 2: return "Some yogurt and granola to start off.";
         break;
-        case 3: return "How bout a coffee and some donuts.\n";
+        case 3: return "How bout a coffee and some donuts.";
         break;
-        case 4: return "For breakfast a bowl of our favorite cereal!\n";
+        case 4: return "For breakfast a bowl of our favorite cereal!";
         break;
         default: return "ERROR";
         break;
@@ -54,11 +54,16 @@ const generateActivityMsg = () => {
 }
 
 // function to return an array to hold all messages
-
+const generateRandomMsg = () => {
+    let msgArray = [];
+    msgArray[0] = generateDailyOutlookMsg();
+    msgArray[1] = generateBreakfastMsg();
+    msgArray[2] = generateActivityMsg();
+    return msgArray;
+}
 
 
 
 // test message
-console.log(generateDailyOutlookMsg());
-console.log(generateBreakfastMsg());
-console.log(generateActivityMsg());
+let message = generateRandomMsg();
+console.log(message.join('\n'));
